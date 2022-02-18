@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_thai_regions,account.thai.regions,model_thai_regions,,1,1,1,1

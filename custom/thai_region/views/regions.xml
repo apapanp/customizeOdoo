@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <record id="regions_form" model="ir.ui.view">
+            <field name="name">thai.regions.form</field>
+            <field name="model">thai.regions</field>
+            <field name="arch" type="xml">
+                <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="regions"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+    </record>
+
+
+
+         <record id="regions_action" model="ir.actions.act_window">
+            <field name="name">Regions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thai.regions</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Select your own Thai Regions !
+                </p>
+            </field>
+        </record>
+        <menuitem id="thai_regions_root"
+            name="Thai Regions"
+            sequence="10"/>
+
+        <menuitem id="thai_regions_owner_root"
+            name="Regions"
+            parent="thai_regions_root"
+            sequence="10"/>
+
+        <menuitem id="thai_regions"
+            name="Regions"
+            parent="thai_regions_owner_root"
+            action="regions_action"
+            sequence="10"/>
+</odoo>

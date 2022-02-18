@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+from odoo import api, fields, models
+class ThaiRegion(models.Model):
+    _name = "thai.regions"
+    _description = "Thai Regions"
+
+    name = fields.Char(string='Name', required=True)
+    regions = fields.Selection([
+        ('Central', 'ภาคกลาง'),
+        ('Eastern', 'ภาคตะวันออก'),
+        ('Northeastern', 'ภาคตะวันออกเฉียงเหนือ'),
+        ('Northern', 'ภาคเหนือ'),
+        ('Southern', 'ภาคใต้'),
+        ('Western', 'ภาคตะวันตก'),
+        ('Bangkok Metropolitan ', 'กรุงเทพมหานครและปริมณฑล'),
+    ], required=True, default='Central')
+    note = fields.Text(string='Description')
